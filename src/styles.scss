@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+// :root {
+//   --cream: #f5f0e8;
+//   --ivory: #faf8f4;
+//   --charcoal: #1a1a1a;
+//   --graphite: #2e2e2e;
+//   --purple: #b8965a;
+//   --purple-light: #d4af7a;
+//   --purple-pale: #f0e6d3;
+//   --muted: #7a7670;
+//   --border: #e2dbd0;
+// }
+:root {
+  --cream: #f6f3fb;
+  --ivory: #fbfaff;
+  --charcoal: #1c1a2b;
+  --graphite: #2d2942;
+  --purple: #7c5cff;
+  --purple-light: #a78bfa;
+  --purple-pale: #ebe6ff;
+  --muted: #7a748c;
+  --border: #ddd6ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+a { text-decoration: none; color: inherit; }
+
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.purple-line { width: 48px; height: 1px; background: var(--purple); margin-bottom: 2.5rem; }
+
+::selection { background: var(--purple-pale); color: var(--charcoal); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }

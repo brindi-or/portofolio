@@ -1,0 +1,23 @@
+footer {
+  background: var(--charcoal);
+  padding: 2rem 4rem;
+  
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--purple);
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+  }
+}
