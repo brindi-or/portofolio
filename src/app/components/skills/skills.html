@@ -1,6 +1,37 @@
 <section id="skills">
-    <div class="skills-inner">
-        <h2>Skills</h2>
-        <p>Skills</p>
+    <div class="skills-i">
+        <div class="skills-h">
+            <span class="section-l">Expertise</span>
+            <h2 class="section-t">Skills &amp;<em>Technologies</em></h2>
+            <div class="gold-l"></div>
+            <p class="skills-i">A curated set of tools and technologies</p>
+        </div>
+
+        <div class="skills-g">
+            <div class="skill-g"  *ngFor="let el of skillsElements"> 
+                <div class="group-h">
+                    <span class="group-i">{{el.icon}}</span>
+                    <h3 >{{el.category}}</h3>
+                </div>
+                <div class="skill-b">
+                    <div class="skill-b-i" *ngFor="let skill of el.skills">
+                        <div class="skill-m">
+                            <span class="skill-n">{{skill.name}}</span>
+                            <span class="skill-p">{{skill.level}}%</span>
+                        </div>
+                        <div class="bar-t">
+                            <div class="bar-f" [style.width]="skill.level"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools-s">
+            <span class="section-l"> My Tech Stack</span>
+            <div class="tools-c" *ngFor="let t of tools">
+                <span class="tool-t">{{t}}</span>
+            </div>
+        </div>
     </div>
 </section>
