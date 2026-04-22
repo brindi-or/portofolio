@@ -8,30 +8,38 @@
         </div>
 
         <div class="skills-g">
-            <div class="skill-g"  *ngFor="let el of skillsElements"> 
-                <div class="group-h">
+            @for( el of skillsElements;track  el.icon){
+                <div class="skill-g"> 
+                    <div class="group-h">
                     <span class="group-i">{{el.icon}}</span>
                     <h3 >{{el.category}}</h3>
                 </div>
                 <div class="skill-b">
-                    <div class="skill-b-i" *ngFor="let skill of el.skills">
-                        <div class="skill-m">
-                            <span class="skill-n">{{skill.name}}</span>
-                            <span class="skill-p">{{skill.level}}%</span>
+                    @for(skill of el.skills ; track skill.name){
+                        <div class="skill-b-i">
+                            <div class="skill-m">
+                                <span class="skill-n">{{skill.name}}</span>
+                                <span class="skill-p">{{skill.level}}%</span>
+                            </div>
+                            <div class="bar-t">
+                                <div class="bar-f" [style.width]="skill.level"></div>
+                            </div>
                         </div>
-                        <div class="bar-t">
-                            <div class="bar-f" [style.width]="skill.level"></div>
-                        </div>
-                    </div>
+                    }
+                    
                 </div>
             </div>
+            }
         </div>
 
         <div class="tools-s">
-            <span class="section-l"> My Tech Stack</span>
-            <div class="tools-c" *ngFor="let t of tools">
+            <!-- <span class="section-l">Tools</span> -->
+            @for(t of tools;track t){
+                <div class="tools-c" >
                 <span class="tool-t">{{t}}</span>
             </div>
+            }
+            
         </div>
     </div>
 </section>

@@ -152,6 +152,7 @@ nav {
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--charcoal);
+      
     }
 
     &.open {
@@ -168,6 +169,6 @@ nav {
 
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .mobile-menu { display: flex; }
+    .mobile-menu { display: flex; ul{list-style: none;}}
   }
 }

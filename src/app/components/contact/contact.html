@@ -1,4 +1,21 @@
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Get in touch with me!</p>
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Let's Build<br><em>Something Great</em></h2>
+      <div class="gold-line"></div>
+      <p>Whether you have a question, a project idea, or just want to say hello, I'm always open to discussing new ideas, creative projects, or opportunities to be part of something remarkable.</p>
+
+      <div class="contact-cards">
+        <a [href]="c.href" class="contact-card" *ngFor="let c of contacts">
+          <span class="card-icon">{{ c.icon }}</span>
+          <div>
+            <span class="card-label">{{ c.label }}</span>
+            <span class="card-val">{{ c.value }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>

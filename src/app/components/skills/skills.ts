@@ -14,9 +14,10 @@ export class Skills {
       icon:'◈',
       skills:[
        { name:'React',level:70},
-       { name:'Angular',level:50},
+       { name:'Angular',level:40},
        { name:'TypeScript',level:40},
        { name:'SCSS / Tailwind',level:80},
+       { name:'Vuejs',level:60},
       ]
     },
      {
@@ -25,8 +26,8 @@ export class Skills {
       skills: [
         { name: 'Laravel', level: 67 },
         { name: 'Python / Django', level: 68 },
-        { name: 'REST & GraphQL APIs', level: 91 },
-        { name: 'PostgreSQL / MongoDB', level: 83 },
+        { name: 'Mysql / MongoDB', level: 65 },
+        { name: 'REST APIs', level: 31 },
       ]
     },
     {
@@ -35,12 +36,10 @@ export class Skills {
       skills: [
         { name: 'Git & GitLab', level: 70 },
         { name: 'Linux / Bash', level: 60 },
-        { name: 'Docker', level: 74 },
-        { name: 'Linux / Bash', level: 80 },
       ]
     }
   ];
 
-  tools = ['Angular', 'React','MySql', 'Node.js', 'Python', 'TypeScript', 'PostgreSQL', 'MongoDB', 'Docker','Windows', 'Git', 'Figma', 'Firebase'];
+  tools = ['Docker','Windows', 'VSCode', 'Figma','Teams','Slack','PhpStorm','MobaXterm','Office 365','HeidiSQL'];
 
 }

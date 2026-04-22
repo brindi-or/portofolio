@@ -1,6 +1,34 @@
 <section id="pictures">
-    <div>
-        <h2>Pictures</h2>
-        <p>Pictures</p>
+    <div class="pic-i">
+        <div class="pic-h">
+            <span class="section-l">My Pictures</span>
+            <h2 class="section-title">Behind the <em>scenes</em></h2>
+            <div class="gold-line"></div>
+            <p>my workspace</p>
+        </div>
+        <div class="pic-g"  >
+            @for (photo of photos;track $index) {
+                <div class="pic-i" [class]="photo.span" (click)="openLightbox(photo,$index)">
+                    <img [src]="photo.src" [alt]="photo.caption">
+                    <div class="item-o">
+                        <span class="item-c">{{photo.caption}}</span>
+                        <span class="item-i">    +</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="lightbox" [class.open]="lightboxOpen" (click)="closeLightbox()">
+        <button class="lb-close" (click)="closeLightbox()">*</button>
+        <button class="lb-nav prev" (click)="$event.stopPropagation();prev()">&larr;</button>
+        @if(activeImg){
+            <div class="lb-content" (click)="$event.stopPropagation()">
+                <img [src]="activeImg.src" [alt]="activeImg.caption">
+                <p class="lb-caption">{{activeImg.caption}}</p>
+                <span class="lb-counter">{{activeIndex+1}}/{{photos.length}}</span>
+            </div>
+        }
+
+        <button class="lb-nav next" (click)="$event.stopPropagation();next()">&rarr;</button>
     </div>
 </section>

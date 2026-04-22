@@ -1,6 +1,6 @@
 section {
   padding: 7rem 4rem;
-  background: var(--charcoal);
+  background: var(--back-skill);
 
   .skills-i { max-width: 1200px; margin: 0 auto; }
 
@@ -9,7 +9,7 @@ section {
     margin-bottom: 4rem;
 
     .section-t { color: var(--ivory); }
-    .section-l { color: var(--purple-light); }
+    .section-l { color: white; }
 
     .skills-i {
       color: rgba(250, 248, 244, 0.5);
@@ -101,6 +101,9 @@ section {
   .tools-s {
     border-top: 1px solid rgba(255,255,255,0.08);
     padding-top: 3rem;
+    display: flex;
+    align-items: start;
+    gap: 5px;
 
     .tools-c {
       display: flex;
@@ -109,8 +112,8 @@ section {
       margin-top: 1.2rem;
 
       .tool-t{
-        border: 1px solid rgba(184, 150, 90, 0.35);
-        color: rgba(212, 175, 122, 0.9);
+        border: 1px solid rgba(181, 90, 184, 0.35);
+        color: rgba(209, 122, 212, 0.9);
         padding: 0.45rem 1.1rem;
         font-size: 0.72rem;
         letter-spacing: 0.1em;
@@ -119,7 +122,7 @@ section {
         cursor: default;
 
         &:hover {
-          background: rgba(184,150,90,0.12);
+          background: rgba(184, 90, 173, 0.12);
           border-color: var(--purple);
           color: var(--purple-light);
         }
