@@ -139,8 +139,8 @@ section {
       }
 
       .submit-btn {
-        background: var(--charcoal);
-        color: var(--ivory);
+        background: var(--charcoal, #1f1f23);
+        color: var(--ivory, #fbfaff);
         border: none;
         padding: 1rem 2.5rem;
         font-family: 'DM Sans', sans-serif;
@@ -148,11 +148,15 @@ section {
         letter-spacing: 0.12em;
         text-transform: uppercase;
         cursor: pointer;
-        transition: background 0.3s;
+        transition: background 0.3s, opacity 0.2s;
         align-self: flex-start;
 
-        &:hover:not(:disabled) { background: var(--purple); }
-        &:disabled { opacity: 0.5; cursor: not-allowed; }
+        &:hover:not(:disabled) { background: var(--purple, #7c5cff); }
+        &:disabled {
+          background: var(--charcoal, #1f1f23);
+          opacity: 0.75;
+          cursor: not-allowed;
+        }
       }
     }
   }
