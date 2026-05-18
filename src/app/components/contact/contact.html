@@ -17,5 +17,46 @@
       </div>
     </div>
 
+    <div class="contact-right">
+      <div class="success-msg" *ngIf="submitted; else formTpl">
+        <span class="success-icon">&#10003;</span>
+        <h3>Thank you!</h3>
+        <p>Your message has been sent. I'll get back to you soon.</p>
+        <button type="button" (click)="submitted=false">Send another</button>
+      </div>
+
+      <ng-template #formTpl>
+        <form #f="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your name</label>
+              <input id="cf-name" type="text" name="name" required maxlength="100" [(ngModel)]="formData.name" [disabled]="sending" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Your email</label>
+              <input id="cf-email" type="email" name="email" required maxlength="200" [(ngModel)]="formData.email" [disabled]="sending" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input id="cf-subject" type="text" name="subject" required maxlength="200" [(ngModel)]="formData.subject" [disabled]="sending" />
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="6" required maxlength="5000" [(ngModel)]="formData.message" [disabled]="sending"></textarea>
+          </div>
+
+          <p class="form-error" *ngIf="errorMsg" style="color:#c0392b;margin:0;font-size:0.85rem;">{{ errorMsg }}</p>
+
+          <button type="submit" class="submit-btn" [disabled]="sending || f.invalid">
+            <span *ngIf="!sending">Send message</span>
+            <span *ngIf="sending">Sending...</span>
+          </button>
+        </form>
+      </ng-template>
+    </div>
+
   </div>
 </section>
