@@ -40,7 +40,7 @@ import { HttpClient } from '@angular/common/http';
     { icon: 'L', label: 'Location', value: 'Douala, Cameroon', href: '#' },
     { icon: 'in', label: 'LinkedIn', value: 'linkedin.com/in/nodembrinda', href: 'https://www.linkedin.com/in/nodem-brinda-1476a1209' },
     { icon: 'GH', label: 'GitHub', value: 'github.com/brindi-or', href: 'https://github.com/brindi-or' },
-    { icon: 'GL', label: 'GitLab', value: 'gitlab.com/breeHD', href: 'https://gitlab.afric.ca/BreeHD' },
+    { icon: 'GL', label: 'GitLab', value: 'gitlab.afric.ca/BreeHD', href: 'https://gitlab.afric.ca/BreeHD' },
     { icon: 'P', label: 'Phone', value: '+237 693 42 52 86', href: 'tel:+237693435286' }
       ];
 }
