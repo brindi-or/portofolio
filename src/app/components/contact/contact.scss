@@ -203,11 +203,14 @@ section:has(.contact-inner) {
   section:has(.contact-inner),
   section#contact {
     padding: 5rem 1.5rem;
+    overflow-x: hidden;
 
     .contact-inner {
       grid-template-columns: 1fr;
       gap: 2.5rem;
     }
+
+    .contact-cards { grid-template-columns: 1fr !important; }
 
     .contact-right {
       padding: 1.5rem 1.25rem;
@@ -217,5 +220,16 @@ section:has(.contact-inner) {
 }
 
 @media (max-width: 480px) {
-  section#contact .contact-cards { grid-template-columns: 1fr; }
+  section:has(.contact-inner),
+  section#contact {
+    padding: 4rem 1rem;
+
+    .contact-card { padding: 0.85rem 0.95rem; }
+
+    .contact-right {
+      padding: 1.25rem 1rem;
+
+      .submit-btn { width: 100%; align-self: stretch; text-align: center; }
+    }
+  }
 }
