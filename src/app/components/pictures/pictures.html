@@ -4,12 +4,12 @@
             <span class="section-l">My Pictures</span>
             <h2 class="section-title">Behind the <em>scenes</em></h2>
             <div class="gold-line"></div>
-            <p>my workspace</p>
+            <p>moments that inspire me</p>
         </div>
         <div class="pic-g"  >
             @for (photo of photos;track $index) {
                 <div class="pic-i" [class]="photo.span" (click)="openLightbox(photo,$index)">
-                    <img [src]="photo.src" [alt]="photo.caption">
+                    <img [src]="photo.src" [alt]="photo.caption" loading="lazy" decoding="async">
                     <div class="item-o">
                         <span class="item-c">{{photo.caption}}</span>
                         <span class="item-i">    +</span>
