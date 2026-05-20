@@ -62,17 +62,17 @@ a { text-decoration: none; color: inherit; }
 .purple-line,
 .gold-line,
 .gold-l {
-  width: 56px;
+  width: 48px;
   height: 1px;
-  background: linear-gradient(90deg, var(--purple), var(--gold));
+  background: var(--purple);
   margin-bottom: 2.5rem;
   border: 0;
 }
 
 ::selection { background: var(--purple-pale); color: var(--charcoal); }
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--purple), var(--purple-deep)); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 4px; }
 
 /* Reveal on scroll — applied via .reveal class */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }

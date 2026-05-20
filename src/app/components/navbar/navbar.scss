@@ -8,21 +8,18 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 4rem;
-  transition: padding 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: padding 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
 
   &.isScroll {
-    background: rgba(251, 250, 255, 0.85);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: var(--ivory);
     padding: 1rem 4rem;
     border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
   }
 
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     cursor: pointer;
     transition: transform 0.4s ease;
 
@@ -33,33 +30,13 @@ nav {
     .logo-dot2,
     .logo-dot3 {
       border-radius: 50%;
-      transition: transform 0.4s ease, background 0.4s ease;
+      background: var(--purple);
     }
 
-    .logo {
-      width: 30px;
-      height: 30px;
-      background: linear-gradient(135deg, var(--purple), var(--purple-deep));
-      box-shadow: 0 4px 12px rgba(124, 92, 255, 0.35);
-    }
-
-    .logo-dot1 {
-      width: 20px;
-      height: 20px;
-      background: var(--purple-light);
-    }
-
-    .logo-dot2 {
-      width: 12px;
-      height: 12px;
-      background: var(--gold);
-    }
-
-    .logo-dot3 {
-      width: 7px;
-      height: 7px;
-      background: var(--gold-soft);
-    }
+    .logo { width: 28px; height: 28px; }
+    .logo-dot1 { width: 18px; height: 18px; opacity: 0.75; }
+    .logo-dot2 { width: 11px; height: 11px; opacity: 0.55; }
+    .logo-dot3 { width: 6px; height: 6px; opacity: 0.4; }
   }
 
   .nav-links {
@@ -70,7 +47,7 @@ nav {
 
     a {
       position: relative;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--charcoal-soft);
@@ -86,8 +63,8 @@ nav {
         bottom: 0;
         height: 1px;
         width: 0;
-        background: linear-gradient(90deg, var(--purple), var(--gold));
-        transition: width 0.35s ease;
+        background: var(--purple);
+        transition: width 0.3s ease;
       }
 
       &:hover {
@@ -97,10 +74,9 @@ nav {
 
       &.nav-cta {
         border: 1px solid var(--purple);
-        padding: 0.5rem 1.3rem;
+        padding: 0.5rem 1.25rem;
         color: var(--purple);
-        border-radius: 99px;
-        transition: all 0.3s;
+        transition: background 0.3s, color 0.3s;
 
         &::after { display: none; }
 
@@ -127,7 +103,7 @@ nav {
       width: 24px;
       height: 1.5px;
       background: var(--charcoal);
-      transition: all 0.3s;
+      transition: transform 0.3s, opacity 0.3s;
     }
 
     &.open {
@@ -140,39 +116,38 @@ nav {
   .mobile-menu {
     display: none;
     position: fixed;
-    top: 70px;
+    top: 64px;
     left: 0;
     right: 0;
-    background: rgba(251, 250, 255, 0.98);
-    backdrop-filter: blur(14px);
+    background: var(--ivory);
     border-bottom: 1px solid var(--border);
-    padding: 1.5rem 2rem;
-    transform: translateY(-20px);
+    padding: 1.25rem 1.5rem;
+    transform: translateY(-12px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.35s ease, opacity 0.35s ease;
-    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
     ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
     }
 
     a {
       display: block;
-      padding: 0.85rem 0.5rem;
-      font-size: 0.92rem;
-      letter-spacing: 0.16em;
+      padding: 0.85rem 0.25rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--charcoal);
-      border-bottom: 1px dashed rgba(124, 92, 255, 0.15);
+      border-bottom: 1px solid var(--border);
       transition: color 0.3s, padding-left 0.3s;
+
+      &:last-child { border-bottom: none; }
 
       &:hover {
         color: var(--purple);
-        padding-left: 0.9rem;
+        padding-left: 0.5rem;
       }
     }
 
