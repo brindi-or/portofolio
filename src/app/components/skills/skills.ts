@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class Skills {
   skillsElements=[
     {
-      category:'Frontent',
+      category:'Frontend',
       icon:'◈',
       skills:[
        { name:'React',level:70},
