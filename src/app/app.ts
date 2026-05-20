@@ -14,5 +14,5 @@ import { Contact } from './components/contact/contact';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('B-Portofolio');
+  protected readonly title = signal('B-Portfolio');
 }
