@@ -15,10 +15,10 @@ export class Pictures {
 
   photos = [
     {src:'assets/images/fl2.jpg',caption:'Love-in-a-mist',span:'wide'},
-    {src:'assets/images/fl3.jpg',caption:'Soft roses bouquet',span:'tall'},
+    {src:'assets/images/fl3.jpg',caption:'Soft roses bouquet',span:''},
     {src:'assets/images/fl4.jpg',caption:'Plumeria in bloom',span:''},
     {src:'assets/images/fl5.jpg',caption:'Cosmos at sunset',span:''},
-    {src:'assets/images/fl.png',caption:'Floral muse',span:'wide'},
+    {src:'assets/images/fl.png',caption:'Floral muse',span:''},
   ];
 
   openLightbox(photo:any,index:any){
