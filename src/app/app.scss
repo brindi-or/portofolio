@@ -1,23 +1,44 @@
 footer {
   background: var(--charcoal);
-  padding: 2rem 4rem;
-  
+  padding: 2.5rem 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
   .footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+
     .footer-name {
       font-family: 'Cormorant Garamond', serif;
-      color: var(--purple);
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
+      color: var(--purple-light);
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover { color: var(--ivory); }
     }
-    
+
     .footer-copy {
-      font-size: 0.75rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding: 2rem 1.5rem;
+    .footer-inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.5rem;
     }
   }
 }
