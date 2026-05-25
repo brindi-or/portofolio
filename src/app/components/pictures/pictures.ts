@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { I18n } from '../../i18n';
 
 @Component({
   selector: 'app-pictures',
@@ -8,16 +9,17 @@ import { Component } from '@angular/core';
   styleUrl: './pictures.scss',
 })
 export class Pictures {
+  i18n = inject(I18n);
 
   lightboxOpen = false;
   activeImg:any = null;
   activeIndex = 0;
 
   photos = [
-    {src:'assets/images/brinda-3.jpg',caption:'At work',span:'tall'},
-    {src:'assets/images/brinda-1.jpg',caption:'Creative space',span:'tall'},
-    {src:'assets/images/brinda-2.jpg',caption:'Style',span:''},
-    {src:'assets/images/brinda-4.jpg',caption:'Off-duty',span:''},
+    {src:'assets/images/brinda-3.jpg',captionKey:'pictures.cap.atwork',span:'tall'},
+    {src:'assets/images/brinda-1.jpg',captionKey:'pictures.cap.creative',span:'tall'},
+    {src:'assets/images/brinda-2.jpg',captionKey:'pictures.cap.style',span:''},
+    {src:'assets/images/brinda-4.jpg',captionKey:'pictures.cap.offduty',span:''},
   ];
 
   openLightbox(photo:any,index:any){
