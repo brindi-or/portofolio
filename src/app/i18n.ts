@@ -76,7 +76,7 @@ export class I18n {
 
       'home.badge': 'Disponible en freelance',
       'home.greeting': 'Bonjour, je suis',
-      'home.subtitle': 'Développeuse logiciel, je conçois des expériences web soignées et agréables à utiliser, depuis Douala, au Cameroun.',
+      'home.subtitle': 'Développeuse logiciel, je conçois des expériences web soignées et agréables à utiliser, où le design rencontre la performance.',
       'home.label.location': 'Localisation',
       'home.val.location': 'Douala, Cameroun',
       'home.label.availability': 'Disponibilité',
@@ -97,7 +97,7 @@ export class I18n {
       'pictures.tag': 'Mes photos',
       'pictures.title1': 'Dans les',
       'pictures.title2': 'coulisses',
-      'pictures.subtitle': 'des moments qui m’inspirent',
+      'pictures.subtitle': 'Des moments qui m’inspirent',
       'pictures.cap.atwork': 'Au travail',
       'pictures.cap.creative': 'Espace créatif',
       'pictures.cap.style': 'Style',

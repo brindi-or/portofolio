@@ -52,7 +52,9 @@
 
           <button type="submit" class="submit-btn" [disabled]="sending || f.invalid">
             <span *ngIf="!sending">{{ i18n.t('contact.btn.send') }}</span>
-            <span *ngIf="sending">{{ i18n.t('contact.btn.sending') }}</span>
+            <span *ngIf="sending" class="sending-state">
+              <span class="spinner" aria-hidden="true"></span>{{ i18n.t('contact.btn.sending') }}
+            </span>
           </button>
         </form>
       </ng-template>
