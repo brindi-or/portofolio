@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
+import { I18n } from '../../i18n';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  i18n = inject(I18n);
   isScroll = false;
   menuOpen = false;
 

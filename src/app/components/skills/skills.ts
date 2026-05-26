@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { I18n } from '../../i18n';
 
 @Component({
   selector: 'app-skills',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './skills.scss',
 })
 export class Skills {
+  i18n = inject(I18n);
+
   skillsElements=[
     {
       category:'Frontend',

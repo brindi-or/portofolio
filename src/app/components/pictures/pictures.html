@@ -1,17 +1,17 @@
 <section id="pictures">
     <div class="pic-i">
         <div class="pic-h">
-            <span class="section-l">My Pictures</span>
-            <h2 class="section-title">Behind the <em>scenes</em></h2>
+            <span class="section-l">{{ i18n.t('pictures.tag') }}</span>
+            <h2 class="section-title">{{ i18n.t('pictures.title1') }} <em>{{ i18n.t('pictures.title2') }}</em></h2>
             <div class="gold-line"></div>
-            <p>moments that inspire me</p>
+            <p>{{ i18n.t('pictures.subtitle') }}</p>
         </div>
         <div class="pic-g"  >
             @for (photo of photos;track $index) {
                 <div class="pic-i" [class]="photo.span" (click)="openLightbox(photo,$index)">
-                    <img [src]="photo.src" [alt]="photo.caption" loading="lazy" decoding="async">
+                    <img [src]="photo.src" [alt]="i18n.t(photo.captionKey)" loading="lazy" decoding="async">
                     <div class="item-o">
-                        <span class="item-c">{{photo.caption}}</span>
+                        <span class="item-c">{{ i18n.t(photo.captionKey) }}</span>
                         <span class="item-i">    +</span>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
         <button class="lb-nav prev" (click)="$event.stopPropagation();prev()">&larr;</button>
         @if(activeImg){
             <div class="lb-content" (click)="$event.stopPropagation()">
-                <img [src]="activeImg.src" [alt]="activeImg.caption">
-                <p class="lb-caption">{{activeImg.caption}}</p>
+                <img [src]="activeImg.src" [alt]="i18n.t(activeImg.captionKey)">
+                <p class="lb-caption">{{ i18n.t(activeImg.captionKey) }}</p>
                 <span class="lb-counter">{{activeIndex+1}}/{{photos.length}}</span>
             </div>
         }
