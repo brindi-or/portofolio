@@ -67,6 +67,7 @@ export class I18n {
       'contact.card.email': 'Email',
       'contact.card.location': 'Location',
       'contact.card.phone': 'Phone',
+      'footer.copy': '© 2026 All rights reserved.',
     },
     fr: {
       'nav.about': 'À propos',
@@ -120,6 +121,7 @@ export class I18n {
       'contact.card.email': 'Email',
       'contact.card.location': 'Localisation',
       'contact.card.phone': 'Téléphone',
+      'footer.copy': '© 2026 Tous droits réservés.',
     },
   };
 

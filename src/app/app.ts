@@ -15,7 +15,7 @@ import { I18n } from './i18n';
   styleUrl: './app.scss'
 })
 export class App {
-  private i18n = inject(I18n);
+  i18n = inject(I18n);
   private titleSvc = inject(Title);
   private meta = inject(Meta);
 
