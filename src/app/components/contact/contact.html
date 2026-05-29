@@ -48,6 +48,8 @@
             <textarea id="cf-message" name="message" rows="6" required maxlength="5000" [(ngModel)]="formData.message" [disabled]="sending"></textarea>
           </div>
 
+          <div #turnstileEl style="margin:0.25rem 0;"></div>
+
           <p class="form-error" *ngIf="errorMsg" style="color:#c0392b;margin:0;font-size:0.85rem;">{{ errorMsg }}</p>
 
           <button type="submit" class="submit-btn" [disabled]="sending || f.invalid">

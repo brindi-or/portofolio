@@ -1,8 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { I18n } from '../../i18n';
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: Record<string, unknown>) => string;
+      reset: (id?: string) => void;
+      remove: (id?: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAADYJ0Kmoc3Ik9yJl';
 
 @Component({
     selector: 'app-contact',
@@ -10,28 +22,64 @@ import { I18n } from '../../i18n';
     templateUrl: './contact.html',
     styleUrl: './contact.scss',
 })
-  export class Contact {
+  export class Contact implements AfterViewInit, OnDestroy {
     i18n = inject(I18n);
     private http = inject(HttpClient);
     private readonly mailerUrl = 'https://brinda-mailer.apps.hirodiscount.com/send';
+
+    @ViewChild('turnstileEl') private turnstileEl?: ElementRef<HTMLDivElement>;
+    private widgetId?: string;
+    private turnstileToken: string | null = null;
 
   formData = { name: '', email: '', subject: '', message: '' };
     submitted = false;
     sending = false;
     errorMsg: string | null = null;
 
+  ngAfterViewInit() {
+        this.renderTurnstile();
+  }
+
+  ngOnDestroy() {
+        try { if (this.widgetId) window.turnstile?.remove(this.widgetId); } catch { /* noop */ }
+  }
+
+  private renderTurnstile(attempt = 0) {
+        const host = this.turnstileEl?.nativeElement;
+        if (!host) return;
+        if (!window.turnstile) {
+                if (attempt < 40) setTimeout(() => this.renderTurnstile(attempt + 1), 250);
+                return;
+        }
+        this.widgetId = window.turnstile.render(host, {
+                sitekey: TURNSTILE_SITE_KEY,
+                callback: (token: string) => { this.turnstileToken = token; },
+                'error-callback': () => { this.turnstileToken = null; },
+                'expired-callback': () => { this.turnstileToken = null; },
+        });
+  }
+
   onSubmit() {
-        this.sending = true;
         this.errorMsg = null;
-        this.http.post<{ok: boolean}>(this.mailerUrl, this.formData).subscribe({
+        if (!this.turnstileToken) {
+                this.errorMsg = this.i18n.t('contact.error');
+                return;
+        }
+        this.sending = true;
+        const payload = { ...this.formData, token: this.turnstileToken };
+        this.http.post<{ok: boolean}>(this.mailerUrl, payload).subscribe({
                 next: () => {
                           this.sending = false;
                           this.submitted = true;
                           this.formData = { name: '', email: '', subject: '', message: '' };
+                          this.turnstileToken = null;
+                          try { if (this.widgetId) window.turnstile?.reset(this.widgetId); } catch { /* noop */ }
                 },
                 error: (err) => {
                           this.sending = false;
                           this.errorMsg = this.i18n.t('contact.error');
+                          this.turnstileToken = null;
+                          try { if (this.widgetId) window.turnstile?.reset(this.widgetId); } catch { /* noop */ }
                           console.error(err);
                 }
         });
